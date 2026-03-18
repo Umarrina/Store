@@ -38,3 +38,4 @@ build/
 .DS_Store
 
 .env
+s2/03_18_2026_homework/dump/customer_dump.sql
