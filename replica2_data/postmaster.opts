@@ -1,0 +1,1 @@
+/usr/lib/postgresql/17/bin/postgres "-c" "primary_conninfo=host=master port=5432 user=replicator password=rep_pass" "-c" "primary_slot_name=replica2_slot"
