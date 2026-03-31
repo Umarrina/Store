@@ -4,5 +4,10 @@
     <file url="file://$PROJECT_DIR$/s2/03_04_2026_homework/data_skan.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/s2/03_18_2026_homework/lsn_wal.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/s2/03_18_2026_homework/seed_data_2.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/s2/04_01_2026_homework/router.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/s2/04_01_2026_homework/section.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/s2/04_01_2026_homework/shard.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/s2/04_01_2026_homework/shard1.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/s2/04_01_2026_homework/shard2.sql" dialect="PostgreSQL" />
   </component>
 </project>
