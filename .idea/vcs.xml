@@ -2,5 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/s2/06_05_2026_homework/qdrant/hw-qdrant" vcs="Git" />
   </component>
 </project>

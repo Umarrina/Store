@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourcePerFileMappings">
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/038af0ea-3106-44bf-8d85-5926d5fa9f64/console.js" value="038af0ea-3106-44bf-8d85-5926d5fa9f64" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/038af0ea-3106-44bf-8d85-5926d5fa9f64/console_1.js" value="038af0ea-3106-44bf-8d85-5926d5fa9f64" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/24eb3fd1-c21c-4735-bd2f-6ff98e53b908/console.sql" value="24eb3fd1-c21c-4735-bd2f-6ff98e53b908" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/758d812f-e889-407c-a51c-fa5f8b0d3fb8/console.sql" value="758d812f-e889-407c-a51c-fa5f8b0d3fb8" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/758d812f-e889-407c-a51c-fa5f8b0d3fb8/console_1.sql" value="758d812f-e889-407c-a51c-fa5f8b0d3fb8" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/758d812f-e889-407c-a51c-fa5f8b0d3fb8/console_2.sql" value="758d812f-e889-407c-a51c-fa5f8b0d3fb8" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/7fb56d07-1f48-4f0a-9263-f5ffc2e6a7c5/console.sql" value="7fb56d07-1f48-4f0a-9263-f5ffc2e6a7c5" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/a01b6c46-583b-4e28-9213-02eda68c50c3/console.sql" value="a01b6c46-583b-4e28-9213-02eda68c50c3" />
     <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/b1bfc5af-5df5-4009-a02d-0599f9a52cc7/console.sql" value="b1bfc5af-5df5-4009-a02d-0599f9a52cc7" />
     <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/b1bfc5af-5df5-4009-a02d-0599f9a52cc7/console_1.sql" value="b1bfc5af-5df5-4009-a02d-0599f9a52cc7" />
     <file url="file://$PROJECT_DIR$/s2/03_04_2026_homework/data_skan.sql" value="b1bfc5af-5df5-4009-a02d-0599f9a52cc7" />
@@ -8,7 +16,6 @@
     <file url="file://$PROJECT_DIR$/s2/03_18_2026_homework/seed_data_2.sql" value="b1bfc5af-5df5-4009-a02d-0599f9a52cc7" />
     <file url="file://$PROJECT_DIR$/s2/04_01_2026_homework/router.sql" value="b1bfc5af-5df5-4009-a02d-0599f9a52cc7" />
     <file url="file://$PROJECT_DIR$/s2/04_01_2026_homework/section.sql" value="b1bfc5af-5df5-4009-a02d-0599f9a52cc7" />
-    <file url="file://$PROJECT_DIR$/s2/04_01_2026_homework/shard.sql" value="b1bfc5af-5df5-4009-a02d-0599f9a52cc7" />
     <file url="file://$PROJECT_DIR$/s2/04_01_2026_homework/shard1.sql" value="b1bfc5af-5df5-4009-a02d-0599f9a52cc7" />
     <file url="file://$PROJECT_DIR$/s2/04_01_2026_homework/shard2.sql" value="b1bfc5af-5df5-4009-a02d-0599f9a52cc7" />
   </component>

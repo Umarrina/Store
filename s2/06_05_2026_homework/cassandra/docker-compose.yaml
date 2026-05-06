@@ -1,0 +1,35 @@
+services:
+  node1:
+    image: cassandra:latest
+    container_name: ${CASSANDRA_NODE1:-cassandra-node1}
+    ports:
+      - "${CASSANDRA_PORT:-9042}:9042"
+    environment:
+      - CASSANDRA_CLUSTER_NAME=${CASSANDRA_CLUSTER:-TestCluster}
+      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+      - MAX_HEAP_SIZE=256M
+      - HEAP_NEWSIZE=64M
+    healthcheck:
+      test: ["CMD-SHELL", "nodetool status | grep -E '^UN'"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+    volumes:
+      - cassandra_node1_data:/var/lib/cassandra
+  node2:
+    image: cassandra:latest
+    container_name: ${CASSANDRA_NODE2:-cassandra-node2}
+    environment:
+      - CASSANDRA_CLUSTER_NAME=${CASSANDRA_CLUSTER:-TestCluster}
+      - CASSANDRA_SEEDS=node1
+      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+      - MAX_HEAP_SIZE=256M
+      - HEAP_NEWSIZE=64M
+    depends_on:
+      node1:
+        condition: service_healthy
+    volumes:
+      - cassandra_node2_data:/var/lib/cassandra
+volumes:
+  cassandra_node1_data:
+  cassandra_node2_data:

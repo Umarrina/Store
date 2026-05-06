@@ -1,0 +1,27 @@
+services:
+  clickhouse:
+    image: clickhouse/clickhouse-server:latest
+    container_name: ${CH_CONTAINER:-clickhouse-lab}
+    ports:
+      - "${CH_HTTP_PORT:-8123}:8123"
+      - "${CH_NATIVE_PORT:-9000}:9000"
+    environment:
+      CLICKHOUSE_DB: ${CH_DB:-default}
+      CLICKHOUSE_USER: ${CH_USER:-default}
+      CLICKHOUSE_PASSWORD: ${CH_PASSWORD:-password}
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+  postgres:
+    image: postgres:16
+    container_name: ${PG_CONTAINER:-postgres-lab}
+    ports:
+      - "${PG_PORT:-5432}:5432"
+    environment:
+      POSTGRES_DB: ${PG_DB:-postgres}
+      POSTGRES_USER: ${PG_USER:-postgres}
+      POSTGRES_PASSWORD: ${PG_PASSWORD:-postgres}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  clickhouse_data:
+  postgres_data:

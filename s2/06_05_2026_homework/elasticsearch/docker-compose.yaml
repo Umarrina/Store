@@ -1,0 +1,13 @@
+services:
+  elasticsearch:
+    image: elasticsearch:7.17.22
+    container_name: ${ES_CONTAINER:-elastic-lab}
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "${ES_PORT:-9200}:9200"
+    volumes:
+      - elastic_data:/usr/share/elasticsearch/data
+volumes:
+  elastic_data:

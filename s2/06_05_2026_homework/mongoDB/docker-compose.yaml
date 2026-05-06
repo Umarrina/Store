@@ -1,0 +1,13 @@
+services:
+  mongodb:
+    image: mongo:8
+    container_name: ${MONGO_CONTAINER:-mongodb-lab}
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER:-root}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD:-root}
+    ports:
+      - "${MONGO_PORT:-27017}:27017"
+    volumes:
+      - mongodb-data:/data/db
+volumes:
+  mongodb-data:
