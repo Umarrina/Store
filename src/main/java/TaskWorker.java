@@ -42,7 +42,6 @@ public class TaskWorker {
                             Instant.now(), taskId, attemptsBefore, payload);
                 }
 
-                // Имитация обработки (50 мс) и случайная ошибка (10%)
                 boolean success = processTask(payload);
 
                 if (success) {
@@ -53,7 +52,6 @@ public class TaskWorker {
                     }
                     System.out.printf("[%s] Задача %d УСПЕШНО завершена%n", Instant.now(), taskId);
                 } else {
-                    // exponential backoff: 5, 10, 20, 40... минут
                     long backoffMinutes = (long) (Math.pow(2, attemptsBefore) * 5);
                     try (PreparedStatement st = conn.prepareStatement(
                             "UPDATE warehouse.task_queue " +
@@ -83,11 +81,10 @@ public class TaskWorker {
 
     private static boolean processTask(JSONObject payload) {
         try {
-            Thread.sleep(50); // имитация обработки 50 мс
+            Thread.sleep(50);
         } catch (InterruptedException e) {
             return false;
         }
-        // 10% ошибок для демонстрации retry
         if (ThreadLocalRandom.current().nextInt(100) < 10) {
             System.out.println(" Ошибка при обработке: " + payload);
             return false;
