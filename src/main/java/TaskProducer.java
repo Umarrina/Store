@@ -8,7 +8,6 @@ public class TaskProducer {
 
     public static void main(String[] args) throws InterruptedException {
         while (true) {
-            // 80% обычных (priority=0), 20% критических (priority=100)
             int priority = random.nextInt(100) < 80 ? 0 : 100;
             JSONObject payload = new JSONObject();
             payload.put("task_id", System.currentTimeMillis());
@@ -16,20 +15,17 @@ public class TaskProducer {
 
             try (Connection conn = DbConnection.getConnection()) {
                 conn.setAutoCommit(false);
-                // вставка задачи (scheduled_at по умолчанию = NOW() на сервере)
                 try (PreparedStatement st = conn.prepareStatement(
                         "INSERT INTO warehouse.task_queue (payload, priority) VALUES (?::jsonb, ?)")) {
                     st.setString(1, payload.toString());
                     st.setInt(2, priority);
                     st.executeUpdate();
                 }
-                // имитация другой бизнес-логики (можно ничего не делать)
                 conn.commit();
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
-            // задержка 2 мс = 500 задач в секунду
             Thread.sleep(2);
         }
     }

@@ -26,7 +26,7 @@ public class ListeningWorker {
             }
             System.out.println("ListeningWorker started, waiting for NOTIFY...");
             while (true) {
-                conn.commit(); // необходимо для получения уведомлений
+                conn.commit();
                 org.postgresql.PGConnection pgConn = conn.unwrap(org.postgresql.PGConnection.class);
                 org.postgresql.PGNotification[] notifications = pgConn.getNotifications(5000);
                 if (notifications != null && notifications.length > 0) {
@@ -47,13 +47,11 @@ public class ListeningWorker {
             System.out.printf("[%s] (NOTIFY) Задача %d (попытка %d): %s%n",
                     Instant.now(), taskId, attemptsBefore, payload);
 
-            // Имитация обработки (50 мс) – всегда успех для простоты
             try {
                 Thread.sleep(50);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
-            // Помечаем как выполненную
             try (PreparedStatement upd = conn.prepareStatement(
                     "UPDATE warehouse.task_queue SET status = 2, updated_at = NOW() WHERE id = ?")) {
                 upd.setLong(1, taskId);
